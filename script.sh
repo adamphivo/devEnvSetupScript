@@ -25,14 +25,27 @@ sudo snap install thunderbird
 # Postman
 sudo snap install postman
 
+#DBeaver
+sudo snap install dbeaver-ce
+
 # Insomnia
 sudo snap install insomnia
 
 # Curl
-sudo apt install -y curl 
+sudo apt install -y curl
+
+# Chromium
+sudo snap install chromium
 
 # Git
-sudo apt install -y git 
+sudo apt install -y git
+git config --global user.email "adamphivo@gmail.com"
+git config --global user.name "Adam Phi Vo"
+
+# SSH
+ssh-keygen -t ed25519 -C "adamphivo@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
 
 # Zsh
 sudo apt install -y zsh 
@@ -85,8 +98,3 @@ wget "https://go.microsoft.com/fwlink/?linkid=2198763" -O azuredatastudio.deb
 sudo apt install -y libunwind8
 sudo dpkg -i azuredatastudio.deb
 rm azuredatastudio.deb
-
-# SSH
-ssh-keygen -t ed25519 -C "adamphivo@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
