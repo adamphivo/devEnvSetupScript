@@ -42,6 +42,9 @@ sudo apt install -y git
 git config --global user.email "adamphivo@gmail.com"
 git config --global user.name "Adam Phi Vo"
 
+# Git Kraken
+sudo snap install gitkraken --classic
+
 # SSH
 ssh-keygen -t ed25519 -C "adamphivo@gmail.com"
 eval "$(ssh-agent -s)"
