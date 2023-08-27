@@ -2,8 +2,8 @@
 set +e
 
 # Update dependencies
-sudo apt update 
-sudo apt upgrade
+sudo apt update
+sudo apt upgrade 
 
 # Snapd
 sudo apt install snapd
@@ -21,12 +21,6 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 
 # Thunderbird
 sudo snap install thunderbird
-
-# Postman
-sudo snap install postman
-
-#DBeaver
-sudo snap install dbeaver-ce
 
 # Insomnia
 sudo snap install insomnia
@@ -101,3 +95,13 @@ wget "https://go.microsoft.com/fwlink/?linkid=2198763" -O azuredatastudio.deb
 sudo apt install -y libunwind8
 sudo dpkg -i azuredatastudio.deb
 rm azuredatastudio.deb
+
+# Downgrade openvpn
+## libssl1.1
+echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+sudo apt-get update
+sudo apt-get install libssl1.1
+
+## openvpn 2.5.1
+sudo echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/openvpn-repo-public.gpg] http://build.openvpn.net/debian/openvpn/release/2.5 focal main" > /etc/apt/sources.list.d/openvpn-aptrepo.list
+sudo apt install openvpn=2.5.1-focal0
